@@ -1,4 +1,4 @@
-# Arabic-Melodies-ProjectL Maqamat Classification using AI
+# Arabic-Melodies-Project: Maqamat Classification using AI
 
 **Maqamat Classification AI** is a machine learning project aimed at analyzing and classifying Quranic recitations based on their **maqam** (melodic mode). This project leverages deep learning and audio processing techniques to identify maqamat in recitations.
 
