@@ -113,11 +113,13 @@ OCR & Text Processing: OpenCV, Tesseract OCR, SpellChecker
 
 Web Deployment: FastAPI, AWS EC2
 
-Stay Tuned!
+# Stay Tuned!
 
 This project is still evolving! Future updates will include dataset expansion, model improvements, and a web-based classification tool.
 
 🔹 Follow this repository for updates!
+
+---------------------------------------
 
 **Contributors**
 - Mohssen Kassir
