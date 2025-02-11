@@ -93,12 +93,9 @@ The model classifies 30-second clips individually.
 A majority voting system determines the maqam of an entire segment.
 
 ### API Service:
-Built using FastAPI to process longform audio.
-Limitations: Assumes the entire audio segment is in one maqam (future improvements planned).
-Planned Web Application:
-User Uploads Recitation → Model Predicts Maqam → Result Displayed
-Hosted on AWS EC2, potential future integration with S3 storage.
-Future Steps
+An API service is being built using FastAPI to process longform audio.
+
+This is a work in progress and will be elaborated on further in future updates.
 
 # Technical Stack
 🔧 Tools & Libraries Used:
@@ -115,7 +112,9 @@ Web Deployment: FastAPI, AWS EC2
 
 # Stay Tuned!
 
-This project is still evolving! Future updates will include dataset expansion, model improvements, and a web-based classification tool.
+This project is still evolving! Code will be provided, as well as more details!
+
+Future updates will include dataset expansion, model improvements, and a web-based classification tool.
 
 🔹 Follow this repository for updates!
 
