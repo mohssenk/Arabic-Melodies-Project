@@ -2,19 +2,29 @@
 Developing an AI-powered system for classifying Quranic recitations based on Arabic musical scales (maqamat).
 
 ## Overview
-The Arabic Melodies Project aims to classify Quranic recitations according to their maqam (melodic mode) using deep learning and audio processing techniques. This project addresses the high barrier to learning maqamat by providing an AI-based classification system to assist learners, reciters, and researchers.
+The Arabic Melodies Project aims to classify Quranic recitations according to their maqam (melodic mode) using deep learning and audio processing techniques. 
+
+This project addresses the high barrier to learning maqamat by providing an AI-based classification system to assist learners, reciters, and researchers.
 
 ## What are Maqamat?
 Maqamat are eight classical Arabic musical scales used in Middle Eastern music and Quranic recitation. Each scale conveys a distinct emotion:
 
 Rast – Confidence & Strength
+
 Bayat – Spiritual Depth
+
 Hejaz – Yearning & Awe
+
 Nahawand – Tenderness (Minor Scale)
+
 Ajam – Happiness & Joy (Major Scale)
+
 Saba – Sorrow
+
 Kurd – Simplicity
+
 Sikah – Intimacy & Devotion
+
 Understanding maqamat is an advanced skill typically requiring years of training. This AI-powered system aims to classify maqamat from recitations and assist learners in recognizing them.
 
 ## Project Pipeline
