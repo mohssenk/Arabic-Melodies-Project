@@ -130,7 +130,7 @@ Web Deployment: FastAPI, AWS EC2
 
 # Stay Tuned!
 
-This project is still evolving! Code will be provided, as well as more details!
+This project is still evolving! Code will be provided, as well as figures and more details!
 
 Future updates will include dataset expansion, model improvements, and a web-based classification tool.
 
