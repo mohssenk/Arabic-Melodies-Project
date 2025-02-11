@@ -1,6 +1,6 @@
-## Arabic Melodies Project: Maqamat Classification using AI
+## Arabic Melodies Project: Maqam Classification using AI
 
-In traditional Arabic music and recitation, maqamat are the foundation of melody, guiding the emotional and structural flow of a performance. These eight distinct melodic modes define how notes are arranged and transitioned, creating different moods such as joy, sorrow, intimacy, or awe. While expert reciters seamlessly switch between maqamat, recognizing them by ear is an advanced skill that takes years of practice.
+In traditional Arabic music and recitation, maqams are the foundation of melody, guiding the emotional and structural flow of a performance. These eight distinct melodic modes define how notes are arranged and transitioned, creating different moods such as joy, sorrow, intimacy, or awe. While expert reciters seamlessly switch between maqams, recognizing them by ear is an advanced skill that takes years of practice.
 
 This project leverages machine learning and audio processing to classify recitations based on their maqam. By analyzing recorded recitations, the system can identify the dominant maqam, providing insights into the melody and structure. The goal is to make maqam recognition more accessible to learners, researchers, and enthusiasts who want to explore this rich musical tradition through AI.
 
@@ -12,11 +12,11 @@ This repository outlines the end-to-end development pipeline, from dataset creat
 
 The Arabic Melodies Project aims to classify Quranic recitations according to their maqam (melodic mode) using deep learning and audio processing techniques. 
 
-This project addresses the high barrier to learning maqamat by providing an AI-based classification system to assist learners, reciters, and researchers.
+This project addresses the high barrier to learning maqams by providing an AI-based classification system to assist learners, reciters, and researchers.
 
-## What are Maqamat?
+## What are Maqams?
 
-Maqamat are eight classical Arabic musical scales used in Middle Eastern music and Quranic recitation. Each scale conveys a distinct emotion:
+The Maqams are eight classical Arabic musical scales used in Middle Eastern music and Quranic recitation. Each scale conveys a distinct emotion:
 
 Rast – Confidence & Strength
 
@@ -34,7 +34,7 @@ Kurd – Simplicity
 
 Sikah – Intimacy & Devotion
 
-Understanding maqamat is an advanced skill typically requiring years of training. This AI-powered system aims to classify maqamat from recitations and assist learners in recognizing them.
+Understanding maqams is an advanced skill typically requiring years of training. This AI-powered system aims to classify maqams from recitations and assist learners in recognizing them.
 
 ---------------------------------------
 
@@ -54,7 +54,7 @@ Annotations: Stored in a JSON format with timestamps and maqam labels.
 
 ## Phase 2: Model Training
 
-📌 Objective: Train a deep learning model to classify maqamat from Quranic recitations.
+📌 Objective: Train a deep learning model to classify maqams from Quranic recitations.
 
 ### Feature Extraction
 
