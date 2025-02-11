@@ -60,17 +60,17 @@ Annotations: Stored in a JSON format with timestamps and maqam labels.
 
 For Feature Extraction, instead of just using MFCCs like previous research, additional features were extracted for better classification:
 
-Chroma Values (12 features)
+- Chroma Values (12 features)
 
-Root Mean Square Energy
+- Root Mean Square Energy
 
-Zero-Crossing Rate
+- Zero-Crossing Rate
 
-Spectral Centroid
+- Spectral Centroid
 
-Spectral Bandwidth
+- Spectral Bandwidth
 
-Spectral Rolloff
+- Spectral Rolloff
 
 ### Neural Network Architecture:
 
@@ -82,21 +82,21 @@ Overall Accuracy: 84.5%
 
 Per-Class Accuracy:
 
-Hejaz: 96%
+- Hejaz: 96%
 
-Saba: 90%
+- Saba: 90%
 
-Nahawand: 89%
+- Nahawand: 89%
 
-Kurd: 86%
+- Kurd: 86%
 
-Ajam: 84%
+- Ajam: 84%
 
-Sikah: 87%
+- Sikah: 87%
 
-Rast: 76%
+- Rast: 76%
 
-Bayat: 70%
+- Bayat: 70%
 
 ## Phase 3: Deployment & API
 
