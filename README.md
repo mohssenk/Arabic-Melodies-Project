@@ -71,7 +71,7 @@ To perform data distribution analysis:
 python run_data_analysis.py
 ```
 
-To perform data distribution analysis:
+To train and evaluate the model:
 ```bash
 python run_model.py
 ```
@@ -81,7 +81,7 @@ To train the model:
 python run_example.py
 ```
 
-The correct classification to for this example is Hejaz
+ - The correct classification to for this example is Hejaz
 
 ## Inputs and Outputs for Each Script 
 
@@ -95,7 +95,7 @@ The correct classification to for this example is Hejaz
 
 ## Future Improvements 
 
-For future technical improvements, I will be combining all the json files in /data/labels into one large json file. I will also be robustly testing the segment classifier to quantify its usefulness. This is still a work-in-progress, so stay tuned for many more updates, both minor and major!
+Future technical improvements include consolidating the JSON label files into a single JSON file and further testing the segment classifier to ensure accurate maqam detection. This is still a work-in-progress, so stay tuned for many more updates, both minor and major!
 
 ## Acknowledgments
 
