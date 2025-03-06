@@ -88,10 +88,10 @@ The correct classification to for this example is Hejaz
 
 | Script                      | Inputs                                      | Outputs                                              |
 |-----------------------------|-----------------------------------------------|------------------------------------------------------|
-| `python run_feature_extraction.py` | `data/clips`                                | `data/extracted_features.csv`                        |
-| `python run_data_analysis.py`      | `data/labels`                               | `outputs/plots/scale_distribution.png` <br> `outputs/logs/feature_extraction.log` |
-| `python run_model.py`              | `data/extracted_features.csv` <br> `data/labels` | `outputs/models/model.h5` <br> `outputs/normalizing_scalers/scaler.pkl` <br> `outputs/plots/training_plots.png` <br> `outputs/plots/confusion_matrices.png` <br> `outputs/logs/training.log` |
-| `python run_example.py`            | `data/example.mp3` <br> `outputs/normalizing_scalers/scaler.pkl` <br> `outputs/models/model.h5` | `outputs/logs/example_prediction.log` |
+| `run_feature_extraction.py` | `data/clips`                                | `data/extracted_features.csv`                        |
+| `run_data_analysis.py`      | `data/labels`                               | `outputs/plots/scale_distribution.png` <br> `outputs/logs/feature_extraction.log` |
+| `run_model.py`              | `data/extracted_features.csv` <br> `data/labels` | `outputs/models/model.h5` <br> `outputs/normalizing_scalers/scaler.pkl` <br> `outputs/plots/training_plots.png` <br> `outputs/plots/confusion_matrices.png` <br> `outputs/logs/training.log` |
+| `run_example.py`            | `data/example.mp3` <br> `outputs/normalizing_scalers/scaler.pkl` <br> `outputs/models/model.h5` | `outputs/logs/example_prediction.log` |
 
 ## Future Improvements 
 
