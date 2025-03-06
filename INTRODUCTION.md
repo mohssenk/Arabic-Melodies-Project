@@ -61,7 +61,8 @@ The architecture of the neural network is shown below. It consists of 6 layers a
 ## Results
 
 The accuracy on the test data was 84.3%. Across the 8 scales, the recall hovered between 70-96%. A more detailed breakdown can be seen in the figures below.
-*Overall Performance Metrics*
+
+**Overall Performance Metrics**
 
 | Metric      | Value |
 |------------|-------|
@@ -72,7 +73,7 @@ The accuracy on the test data was 84.3%. Across the 8 scales, the recall hovered
 
 ---
 
-*Per-Class Recall Scores*
+**Per-Class Recall Scores**
 
 | Scale   | Recall |
 |---------|--------|
