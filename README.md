@@ -22,6 +22,7 @@ The introduction explains the background knowledge, my unique contributions, how
 
 ## Project Structure
 
+```
 .
 ├── data
 │   ├── clips                   # Audio clips for feature extraction (chopped up from full_segments)
@@ -46,6 +47,7 @@ The introduction explains the background knowledge, my unique contributions, how
 ├── run_data_analysis.py        # Performs data analysis on maqam distribution
 ├── run_example.py              # Processes a single example through the model
 └── run_feature_extraction.py   # Extracts features from audio files
+```
 
 ## How to Run the Pipeline
 
@@ -84,7 +86,7 @@ The correct classification to for this example is Hejaz
 ## Inputs and Outputs for Each Script 
 
 
-| Script                      | Relies on                                      | Produces                                              |
+| Script                      | Inputs                                      | Outputs                                              |
 |-----------------------------|-----------------------------------------------|------------------------------------------------------|
 | `python run_feature_extraction.py` | `data/clips`                                | `data/extracted_features.csv`                        |
 | `python run_data_analysis.py`      | `data/labels`                               | `outputs/plots/scale_distribution.png` <br> `outputs/logs/feature_extraction.log` |
