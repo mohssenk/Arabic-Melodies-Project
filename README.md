@@ -1,138 +1,104 @@
-## Arabic Melodies Project: Maqam Classification using AI
-
-In traditional Arabic music and recitation, maqams are the foundation of melody, guiding the emotional and structural flow of a performance. These eight distinct melodic modes define how notes are arranged and transitioned, creating different moods such as joy, sorrow, intimacy, or awe. While expert reciters seamlessly switch between maqams, recognizing them by ear is an advanced skill that takes years of practice.
-
-This project leverages machine learning and audio processing to classify recitations based on their maqam. By analyzing recorded recitations, the system can identify the dominant maqam, providing insights into the melody and structure. The goal is to make maqam recognition more accessible to learners, researchers, and enthusiasts who want to explore this rich musical tradition through AI.
-
-This repository outlines the end-to-end development pipeline, from dataset creation to deep learning model training and future deployment plans.
-
----------------------------------------
+# Arabic Melodic Scales (Maqams) Classification Project 
 
 ## Overview
 
-The Arabic Melodies Project aims to classify Quranic recitations according to their maqam (melodic mode) using deep learning and audio processing techniques. 
+This project aims to classify Arabic melodic scales (maqams) from audio clips using machine learning. The project processes audio files to extract features, trains a neural network to recognize different scales, and provides tools for visualizing the distribution of maqamat across a dataset.
 
-This project addresses the high barrier to learning maqams by providing an AI-based classification system to assist learners, reciters, and researchers.
+## Features
 
-## What are Maqams?
+This pipeline is 4 parts:
 
-The Maqams are eight classical Arabic musical scales used in Middle Eastern music and Quranic recitation. Each scale conveys a distinct emotion:
+1. Extracting features from the data (run_feature_extraction.py)
+2. Running a data distribution analysis (run_data_analysis.py)
+3. Training and evaluating the model (run_model.py)
+4. Testing classification on an example segment (run_example.py)
 
-Rast – Confidence & Strength
+These 4 parts can function completely independently since all the necessary models and data are already uploaded.
 
-Bayat – Spiritual Depth
+## Introduction
 
-Hejaz – Yearning & Awe
+The introduction explains the background knowledge, my unique contributions, how I developed a dataset, and the results of this project. It covers a larger scope than this readme, which focuses on the project structure and how to run it.
 
-Nahawand – Tenderness (Minor Scale)
 
-Ajam – Happiness & Joy (Major Scale)
+## Project Structure
 
-Saba – Sorrow
+.
+├── data
+│   ├── clips                   # Audio clips for feature extraction (chopped up from full_segments)
+│   ├── labels                  # JSON files with labels for each clip
+│   ├── full_segments           # Audio segments (included for reference, not used by scripts)
+│   ├── example.mp3             # An example that is run in the final script
+│   └── extracted_features.csv  # All the features from all the clips
+├── outputs
+│   ├── logs                    # Log files
+│   ├── model                   # Trained model file
+│   ├── normalizing_scaler      # Scaler object for data normalization
+│   └── plots                   # Plots and graphics generated from the data
+├── src
+│   ├── data_preprocessor.py    # Script for data loading and preprocessing
+│   ├── model.py                # Script to build and compile the model
+│   ├── train_eval_model.py     # Script for training and evaluating the model
+│   └── visualize_results.py    # Script for visualizing results
+├── utils
+│   ├── audio_features.py       # Script for audio feature extraction
+│   └── audio_processor.py      # Script for Processing audio and contains segment classifier
+├── run_model.py                # Executes the full model training and evaluation pipeline
+├── run_data_analysis.py        # Performs data analysis on maqam distribution
+├── run_example.py              # Processes a single example through the model
+└── run_feature_extraction.py   # Extracts features from audio files
 
-Kurd – Simplicity
+## How to Run the Pipeline
 
-Sikah – Intimacy & Devotion
+**Prerequisites**
 
-Understanding maqams is an advanced skill typically requiring years of training. This AI-powered system aims to classify maqams from recitations and assist learners in recognizing them.
+Ensure you have Python 3.12 and pip installed. Install the required dependencies using:
 
----------------------------------------
+```bash
+pip install -r requirements.txt
+```
 
-## Project Pipeline
+**Running the pipeline**
 
-The project follows a three-phase workflow:
+To run the feature extraction:
+```bash
+python run_feature_extraction.py
+```
 
-## Phase 1: Data Collection & Preprocessing
+To perform data distribution analysis:
+```bash
+python run_data_analysis.py
+```
 
-📌 Objective: Build a labeled dataset of Quranic recitations with maqam annotations.
+To perform data distribution analysis:
+```bash
+python run_model.py
+```
 
-Data Source: A 30.5-hour YouTube playlist of Quranic recitations from a single reciter.
+To train the model:
+```bash
+python run_example.py
+```
 
-Audio Clips: Each 30-second segment is assigned a maqam label.
+The correct classification to for this example is Hejaz
 
-Annotations: Stored in a JSON format with timestamps and maqam labels.
+## Inputs and Outputs for Each Script 
 
-## Phase 2: Model Training
 
-📌 Objective: Train a deep learning model to classify maqams from Quranic recitations.
+| Script                      | Relies on                                      | Produces                                              |
+|-----------------------------|-----------------------------------------------|------------------------------------------------------|
+| `python run_feature_extraction.py` | `data/clips`                                | `data/extracted_features.csv`                        |
+| `python run_data_analysis.py`      | `data/labels`                               | `outputs/plots/scale_distribution.png` <br> `outputs/logs/feature_extraction.log` |
+| `python run_model.py`              | `data/extracted_features.csv` <br> `data/labels` | `outputs/models/model.h5` <br> `outputs/normalizing_scalers/scaler.pkl` <br> `outputs/plots/training_plots.png` <br> `outputs/plots/confusion_matrices.png` <br> `outputs/logs/training.log` |
+| `python run_example.py`            | `data/example.mp3` <br> `outputs/normalizing_scalers/scaler.pkl` <br> `outputs/models/model.h5` | `outputs/logs/example_prediction.log` |
 
-### Feature Extraction
+## Future Improvements 
 
-For Feature Extraction, instead of just using MFCCs like previous research, additional features were extracted for better classification:
+For future technical improvements, I will be combining all the json files in /data/labels into one large json file. I will also be robustly testing the segment classifier to quantify its usefulness. This is still a work-in-progress, so stay tuned for many more updates, both minor and major!
 
-- Chroma Values (12 features)
+## Acknowledgments
 
-- Root Mean Square Energy
+Thank you to the reciter Mustafa Shukeir for making his playlist public, which made this project possible!
 
-- Zero-Crossing Rate
-
-- Spectral Centroid
-
-- Spectral Bandwidth
-
-- Spectral Rolloff
-
-### Neural Network Architecture:
-
-A feedforward artificial neural network (ANN) was trained. The configuration will be detailed in a future update. 
-
-### Results
-
-Overall Accuracy: 84.5%
-
-Per-Class Accuracy:
-
-- Hejaz: 96%
-
-- Saba: 90%
-
-- Nahawand: 89%
-
-- Kurd: 86%
-
-- Ajam: 84%
-
-- Sikah: 87%
-
-- Rast: 76%
-
-- Bayat: 70%
-
-## Phase 3: Deployment & API
-
-📌 Objective: Provide a usable system for maqam classification.
-
-### Segment Classification:
-
-The model classifies 30-second clips individually.
-
-A majority voting system determines the maqam of an entire segment.
-
-### API Service:
-
-An API service is being built using FastAPI to process longform audio.
-
-This is a work in progress and will be elaborated on further in future updates.
-
-# Technical Stack
-
-🔧 Tools & Libraries Used:
-
-Python 3.11
-
-Machine Learning: TensorFlow, scikit-learn
-
-Audio Processing: Librosa
-
-OCR & Text Processing: OpenCV, Tesseract OCR, SpellChecker
-
-Web Deployment: FastAPI, AWS EC2
-
-# Stay Tuned!
-
-This project is still evolving! Code will be provided, as well as figures and more details!
-
-Future updates will include dataset expansion, model improvements, and a web-based classification tool.
 
 🔹 Follow this repository for updates!
 
