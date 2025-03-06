@@ -1,2 +1,2 @@
-2025-03-06 07:56:00,410 - INFO - prediction for example: Hejaz
-2025-03-06 08:05:08,949 - INFO - prediction for example: Hejaz
+2025-03-06 14:12:56,294 - WARNING - Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.
+2025-03-06 14:12:57,255 - INFO - prediction for example: Hejaz

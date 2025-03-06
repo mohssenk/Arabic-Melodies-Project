@@ -28,7 +28,7 @@ def run_example(file_path, AudioFeatures, NNscaler, model):
     processor = AudioProcessor(file_path, AudioFeatures, NNscaler)
     
     # Process the audio file, predict its class, and log the result
-    prediction = processor.process(model)
+    prediction = processor.segment_classifier(model)
     logging.info('prediction for example: %s', prediction)
 
 

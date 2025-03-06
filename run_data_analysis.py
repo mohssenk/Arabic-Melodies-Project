@@ -68,10 +68,10 @@ def translate_items(scales_with_len):
         'كرد': 'Kurd',
         'نهاوند': 'Nahawand'
     }
-    translated_scale = defaultdict(float, {
+    translated_scales = defaultdict(float, {
                         translate[key.strip("[]'")]: value for key, value in scales_with_len.items()
                         })
-    return translated_scales_with_len
+    return translated_scales
 
 
 if __name__ == '__main__':

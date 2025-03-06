@@ -120,7 +120,7 @@ class AudioProcessor:
         shutil.rmtree(self.output_folder)
 
     
-    def process(self, model):
+    def segment_classifier(self, model):
         # High-level method to run all steps in sequence
         self.segment_audio()
         self.extract_features()

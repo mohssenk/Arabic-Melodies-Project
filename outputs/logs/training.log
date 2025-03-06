@@ -1,27 +1,29 @@
-2025-03-06 07:35:01,384 - INFO - Accuracy: 0.8427
-2025-03-06 07:35:01,385 - INFO - Precision: 0.8492
-2025-03-06 07:35:01,386 - INFO - Recall: 0.8427
-2025-03-06 07:35:01,387 - INFO - F1 Score: 0.8443
-2025-03-06 07:35:01,394 - INFO -               precision    recall  f1-score   support
+2025-03-06 14:11:30,075 - WARNING - You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. 
+2025-03-06 14:11:30,725 - INFO - Accuracy: 0.8453
+2025-03-06 14:11:30,726 - INFO - Precision: 0.8485
+2025-03-06 14:11:30,726 - INFO - Recall: 0.8453
+2025-03-06 14:11:30,726 - INFO - F1 Score: 0.8457
+2025-03-06 14:11:30,734 - INFO -               precision    recall  f1-score   support
 
-       Bayat       0.67      0.76      0.71       105
-       Hejaz       0.90      0.94      0.92        81
-        Rast       0.87      0.76      0.81       135
-      Seekah       0.90      0.89      0.89       106
-        Saba       0.83      0.86      0.84        50
-        Ajam       0.72      0.80      0.76        45
-        Kurd       0.76      0.89      0.82        35
-    Nahawand       0.93      0.87      0.90       206
+       Bayat       0.73      0.70      0.72       105
+       Hejaz       0.88      0.95      0.91        81
+        Rast       0.87      0.81      0.84       135
+      Seekah       0.85      0.87      0.86       106
+        Saba       0.82      0.82      0.82        50
+        Ajam       0.71      0.78      0.74        45
+        Kurd       0.71      0.91      0.80        35
+    Nahawand       0.94      0.89      0.92       206
 
-    accuracy                           0.84       763
-   macro avg       0.82      0.85      0.83       763
-weighted avg       0.85      0.84      0.84       763
+    accuracy                           0.85       763
+   macro avg       0.81      0.84      0.83       763
+weighted avg       0.85      0.85      0.85       763
 
-2025-03-06 07:35:01,396 - INFO - Accuracy for Bayat: 0.7619
-2025-03-06 07:35:01,397 - INFO - Accuracy for Hejaz: 0.9383
-2025-03-06 07:35:01,398 - INFO - Accuracy for Rast: 0.7630
-2025-03-06 07:35:01,399 - INFO - Accuracy for Seekah: 0.8868
-2025-03-06 07:35:01,399 - INFO - Accuracy for Saba: 0.8600
-2025-03-06 07:35:01,400 - INFO - Accuracy for Ajam: 0.8000
-2025-03-06 07:35:01,401 - INFO - Accuracy for Kurd: 0.8857
-2025-03-06 07:35:01,401 - INFO - Accuracy for Nahawand: 0.8738
+2025-03-06 14:11:30,736 - INFO - Recall for Bayat: 0.7048
+2025-03-06 14:11:30,736 - INFO - Recall for Hejaz: 0.9506
+2025-03-06 14:11:30,736 - INFO - Recall for Rast: 0.8148
+2025-03-06 14:11:30,736 - INFO - Recall for Seekah: 0.8679
+2025-03-06 14:11:30,736 - INFO - Recall for Saba: 0.8200
+2025-03-06 14:11:30,736 - INFO - Recall for Ajam: 0.7778
+2025-03-06 14:11:30,736 - INFO - Recall for Kurd: 0.9143
+2025-03-06 14:11:30,736 - INFO - Recall for Nahawand: 0.8932
+2025-03-06 14:11:32,958 - INFO - Model training and evaluation complete. Results are saved in the output directory.

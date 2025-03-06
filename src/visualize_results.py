@@ -64,13 +64,13 @@ def plot_confusion_matrix(cm, output_dir='outputs/plots', filename='confusion_ma
     
     
 def save_training_plots(history, output_dir='outputs/plots', filename='training_plots.png'):
-   """
-   Save plots of training and validation accuracy and loss.
-   Args:
+    """
+    Save plots of training and validation accuracy and loss.
+    Args:
         history (History): Training history object from Keras containing performance metrics.
         output_dir (str): Directory to save the generated plots.
         filename (str): Filename for the saved plot.
-   """
+    """
 
     plt.figure(figsize=(12, 5))
 

@@ -1,11 +1,11 @@
 
 joblib
 tensorflow
-numpy
+numpy==1.26.4
 pandas
 matplotlib
 seaborn
 librosa
-moviepy
+moviepy==1.0.3
 scikit-learn
 tqdm
