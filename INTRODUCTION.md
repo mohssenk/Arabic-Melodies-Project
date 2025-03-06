@@ -10,6 +10,8 @@ Welcome to my favorite and most sentimental project! In the following post, I wi
 At the basic level, a musical scale is a series of notes arranged in a structural order. These scales form structural outlines for melodies. From each scale, many melodies can be made. Each unique scale has a special rhythm or emotion that can be sensed in all the melodies that belong to it. 
 Every culture has its musical traditions, and the Arab world is no different. In Arabic music, there are 8 famous scales used in music, singing, reading poems melodiously, and more. These 8 scales are also called the maqams. Each of these 8 is famously associated with an emotion.
 For example, the scale of Hejaz induces a feeling of yearning and is often used in romance. It’s also incredibly iconic, being heavily associated with oriental music. In fact, the average person can often recognize its association with Middle Eastern culture.
+
+
 In fact, here are all the 8 scales, their emotions, and associated examples. When listening, note which emotion it immediately begins to stir. While it is not needed to listen to any of them to them to understand this project, they are listed here for reference: 
 
 
@@ -23,9 +25,11 @@ In fact, here are all the 8 scales, their emotions, and associated examples. Whe
   - [Seekah](https://youtu.be/hmby0lm1DfA?si=V9bM_pM4l32RZ8l8) - Intimacy & devotion
 
 
-These 8 scales aren’t just used for musical instruments, but for singing and reading poems melodiously. Melodiously orating long, well-written poems is a very large part of Arabic culture, and the 8 scales come heavily in handy. One can choose a scale to use while orating their poem, depending on the emotion they seek to avoid in the audience. For example, Ajam can be used for a poem recited at a wedding, and Saba can be for a poem recited at a funeral. One can also switch between scales for different parts of a (long) poem, depending on what one wants to communicate.
+These 8 scales aren’t just used for musical instruments, but for singing and reading poems melodiously. Melodiously orating long, well-written poems is a very large part of Arabic culture, and the 8 scales come heavily in handy. One can choose a scale to use while orating their poem or script, depending on the emotion they seek to avoid in the audience. For example, Ajam can be used for a poem recited at a wedding, and Saba can be for a poem recited at a funeral. One can also switch between scales for different parts of a (long) poem, depending on what one wants to communicate.
 
-For learners, learning to recognize the scales is essential to learning to recite or sing them. However, there is a large barrier to entry. It is very difficult to learn to recognize them confidently without the help of a professional. This makes it very inaccessible to learn. For this reason, I have created a classifier that can detect the scale of an audio segment. This project serves as  a precursor to a learning tool. In the long term, this learning tool can become vital for students to learn the art of recital and singing. 
+
+For learners, learning to recognize the scales is essential to learning to recite or sing them. However, there is a large barrier to entry. It is very difficult to learn to recognize them confidently without the help of a professional. This makes them very inaccessible to learn. For this reason, I have created a classifier that can detect the scale of an audio segment. This project serves as a precursor to a learning tool. In the long term, this project can sprout into a full-fledged learning tool can become vital for students to learn the art of recital and singing. 
+
 
 For this project, I have created a completely original dataset of 30.5 hours. This is the largest dataset of its kind for the 8 Arabic scales. By completing this project, I lay the foundations for a complete pipeline that can classify long audio segments.
 
@@ -33,7 +37,7 @@ For this project, I have created a completely original dataset of 30.5 hours. Th
 ## Previous Literature 
 
 
-There have been 3 academic papers ([Shahriar](https://ieeexplore.ieee.org/document/9496604), [Omari](https://figshare.com/articles/journal_contribution/Maqam_Classification_of_Quranic_Recitations_using_Deep_Learning/24131781?file=42335634), and [Alaydrus](https://browser-cdn.ysoa.org.uk/volumes/Vol101No21/34Vol101No21.pdf)) written in total on this project, done on 2 datasets (which are not publicly available). The first dataset is 6 hours, and the second is 30 hours long. The focus on these papers is on classifying 30-60 second audio clips. Overall, accuracies of 80-95% have been achieved.
+There have been 3 academic papers ([Shahriar](https://ieeexplore.ieee.org/document/9496604), [Omari](https://figshare.com/articles/journal_contribution/Maqam_Classification_of_Quranic_Recitations_using_Deep_Learning/24131781?file=42335634), and [Alaydrus](https://browser-cdn.ysoa.org.uk/volumes/Vol101No21/34Vol101No21.pdf)) written in total on the topic of classifying maqams, done on 2 datasets (which are not publicly available). The first dataset is 6 hours, and the second is 30 hours long. The focus on these papers is on classifying 30-60 second audio clips. Overall, accuracies of 80-95% have been achieved.
 
 
 ## Overview
@@ -48,6 +52,14 @@ From each clip, I extracted 17 features (see below). I used an artificial neural
 
 ## Creation of Dataset
 
+
+The dataset was created using a publicly available [playlist](https://www.youtube.com/playlist?list=PL97dVNc_FCMVlCaSqgYdictI0qHWeLG7D) by a professional reciter called Mustafa Shukeir, who uploaded 30.5 hours of himself doing a Quranic recitation while alternating between the 8 scales. This is an educational playlist which always has the scale written on screen. Using an automated pipeline built with Python and relying on the Tesseract Optical Character Recognition (OCR) library, I chopped up each video in the playlist into segments (317 total segments across the playlist), with each segment being the part of the video where he used a particular scale. Because he would alternate between scales during a video, each video becomes multiple segments. 
+
+
+Each segment was further chopped into 30-60 second audio clips (3814 total clips) and corresponding labels (stored in JSON). Typically, all the clips extracted from a segment would be 30 seconds, except the final clip which would be between 30-60 seconds. These clips are used for training the neural network. Each label is a json file that records the timestamp from the video it corresponds to, the scale, and other features that were provided by the playlist but are beyond the scope of this project. (These extra recorded features are the pitch and the branch, which is a subscale). Much of the information recorded in the json is in Arabic, and is translated to English during processing.
+
+
+The scripts used for the creation of the dataset are not included within this project, but may be added in future updates.
 
 
 ![Alt Text](https://raw.githubusercontent.com/mohssenk/Arabic-Melodies-Project/refs/heads/master/images_for_introduction/data_dist.png)
@@ -123,5 +135,5 @@ Finally, I created a segment classifier that can take in a long segment and dete
 ## Future Plans
 
 
-Currently the dataset is only 1 reciter, so to be generalizable it needs a much more diverse dataset. I plan to expand the dataset heavily by adding uploaded youtube videos with the scale listed in the description or title. With my unique contribution of an audio classifier, an application will be created in the future that can classify any clip uploaded by a learner that wants to confidently know the scale of a reciter they listen to. 
+Currently, the dataset is only 1 reciter, so to be generalizable it needs a much more diverse dataset. I plan to expand the dataset heavily by adding uploaded youtube videos with the scale listed in the description or title. With my unique contribution of an audio classifier, an application will be created in the future that can classify any clip uploaded by a learner that wants to confidently know the scale of a reciter they listen to. 
 
