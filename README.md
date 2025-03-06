@@ -43,10 +43,14 @@ The introduction explains the background knowledge, my unique contributions, how
 ├── utils
 │   ├── audio_features.py       # Script for audio feature extraction
 │   └── audio_processor.py      # Script for Processing audio and contains segment classifier
+├── images_for_introduction      # Folder containing images used in INTRODUCTION.md
 ├── run_model.py                # Executes the full model training and evaluation pipeline
 ├── run_data_analysis.py        # Performs data analysis on maqam distribution
 ├── run_example.py              # Processes a single example through the model
-└── run_feature_extraction.py   # Extracts features from audio files
+├── run_feature_extraction.py   # Extracts features from audio files
+├── README.md                   # Main project documentation (structure & execution details)
+├── INTRODUCTION.md             # In-depth explanation of the project, background, and methodology
+└── requirements.txt            # Dependencies needed to run the project
 ```
 
 ## How to Run the Pipeline
