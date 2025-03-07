@@ -22,7 +22,7 @@ def calculate_cumulative_lengths(labels_dir):
     
     for filename in os.listdir(labels_dir):    
         if filename.endswith('.json'):
-            with open(os.path.join(labels_dir, filename), 'r') as f:
+            with open(os.path.join(labels_dir, filename), 'r', encoding='utf-8') as f:
                 label = json.load(f)  # Load the JSON data from file
                 timestamp = label['timestamp']  # Extract the length of the maqam
                 maqam = label['maqam'][0] if isinstance(label['maqam'], list) else label['maqam'] # Handle maqam being list or single value
