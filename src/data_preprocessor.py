@@ -12,7 +12,7 @@ def get_scale(file_name, labels_dir):
     base_name = file_name.split('_clip')[0]
     json_filename = base_name + '.mp3.json'
     json_path = os.path.join(labels_dir, json_filename)
-    with open(json_path, 'r') as f:
+    with open(json_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
         return data['maqam']
     
