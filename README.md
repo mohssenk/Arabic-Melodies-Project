@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project aims to classify Arabic melodic scales (maqams) from audio clips using machine learning. The project processes audio files to extract features, trains a neural network to recognize different scales, and provides tools for visualizing the distribution of maqamat across a dataset.
+This project aims to classify Arabic melodic scales (maqams) from audio clips using machine learning. The project processes audio files to extract features, trains a neural network to recognize different scales, and provides tools for visualizing the distribution of maqamat across a dataset. The repository is 1.6 GB to download (due to containing an original dataset).
 
 ## Features
 
@@ -25,7 +25,7 @@ The introduction explains the background knowledge, my unique contributions, how
 ```
 .
 ├── data/
-│   ├── clips/                   # Audio clips for feature extraction (chopped up from full_segments)
+│   ├── clips/                   # Audio clips for feature extraction
 │   ├── labels/                  # JSON files with labels for each clip
 │   ├── example.mp3              # An example that is run in the final script
 │   └── extracted_features.csv   # All the features from all the clips
@@ -51,6 +51,38 @@ The introduction explains the background knowledge, my unique contributions, how
 ├── INTRODUCTION.md              # In-depth explanation of the project, background, and methodology
 └── requirements.txt             # Dependencies needed to run the project
 ```
+
+## Structure of the Data
+
+**Clips**
+
+The clips are all composed from chopped up surahs (called chapters in English). Each surah is divided into X parts (with each unique part is recited in its own melodic scale). Each part is chopped into a Y clips (30-60 seconds long).
+
+***Example Clip Name:*** 
+```
+surah2_part3_clip2.mp3
+```
+
+This is the second chapter in the reciter's playlist, and the third part. All clips belonging to the third part have the same label.
+
+**Labels**
+
+The corresponding label will have the same naming pattern.
+
+***Example Label Name:***
+```
+surah2_part3.mp3.json
+```
+
+This label is paired with all clips from the second chapter and third part. 
+
+Every label contains:
+ - The timestamp from the youtube video where the part is played
+ - The scale (aka maqam) used; written in Arabic
+ - The branch used; written in Arabic (this data is extracted from playlist but not used in this project)
+ - The pitch degree used (this data is extracted from playlist but not used in this project)
+ - The sign of the pitch used (this data is extracted from playlist but not used in this project)
+ 
 
 ## How to Run the Pipeline
 
@@ -98,7 +130,13 @@ python run_example.py
 
 ## Future Improvements 
 
-Future technical improvements include consolidating the JSON label files into a single JSON file and further testing the segment classifier to ensure accurate maqam detection. This is still a work-in-progress, so stay tuned for many more updates, both minor and major!
+Future technical improvements include:
+ - Consolidating the JSON label files into a single JSON file
+ - Translation of the dataset labels into English
+ - Further testing the segment classifier to ensure accurate maqam detection
+ - Using Git LFS to manage the large dataset and make it more download-friendly
+ 
+ This is still a work-in-progress, so stay tuned for many more updates, both minor and major!
 
 ## Acknowledgments
 
