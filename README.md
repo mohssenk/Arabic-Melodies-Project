@@ -27,7 +27,6 @@ The introduction explains the background knowledge, my unique contributions, how
 ├── data/
 │   ├── clips/                   # Audio clips for feature extraction (chopped up from full_segments)
 │   ├── labels/                  # JSON files with labels for each clip
-│   ├── full_segments/           # Audio segments (included for reference, not used by scripts)
 │   ├── example.mp3              # An example that is run in the final script
 │   └── extracted_features.csv   # All the features from all the clips
 ├── outputs/
